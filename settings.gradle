@@ -3,8 +3,21 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "ModularizedApp"
-include ':app'
+include ':app'                          // android.library
+
+//Modules
+include ':core'                         // java.library
+include ':constants'                    // java.library
+
+include ':hero'                         // java.library
+include ':hero:hero-datasource'         // java.library
+include ':hero:hero-datasource-test'    // java.library
+include ':hero:hero-domain'             // java.library
+include ':hero:hero-interactors'        // java.library
+
+include ':hero:ui-herolist'             // android.library
+include ':hero:ui-herodetail'           // android.library
+include ':components'                   // android.library
